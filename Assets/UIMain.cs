@@ -10,6 +10,8 @@ public class UIMain : MonoBehaviour
     public static UIMain Instance() { return mInstance;  }
 
     public Image m_HpBar;
+    public GameObject m_PlayerObject; // 為了演示方便，此為強制放進來
+    //public Player m_PlayerObject; // 這方法是否不可行?
 
     private void Awake()
     {
@@ -36,7 +38,8 @@ public class UIMain : MonoBehaviour
 
     public void DealDamageTest()
     {
-
+        m_PlayerObject.SendMessage("GetDamage!!", 10.0f);
+        //m_PlayerObject.GetHit(); ???? 這是否根本不可行?
     }
 }
  

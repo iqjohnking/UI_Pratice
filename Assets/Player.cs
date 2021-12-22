@@ -6,14 +6,11 @@ public class Player : MonoBehaviour
 {
     float player_fHp = 100.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    void Update() 
     {
         
     }
@@ -25,6 +22,7 @@ public class Player : MonoBehaviour
         {
             player_fHp = 0;
         }
+        //¥ý©I¥s³æ¨Ò¡A¦A©I¥sfunction
         UIMain.Instance().UpdateHpBar(player_fHp / 100.0f);
     }
 }

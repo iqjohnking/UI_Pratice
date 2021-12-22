@@ -232,6 +232,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &573650745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100326, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
+  m_PrefabInstance: {fileID: 1764760858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &573650748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573650745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafd1081161c4dc419159b86249a0d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &596900254
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0211f0da6df52114cb05ea767dc8c8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HpBar: {fileID: 0}
+  m_HpBar: {fileID: 1825475558}
+  m_PlayerObject: {fileID: 573650745}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +551,7 @@ GameObject:
   - component: {fileID: 835314608}
   - component: {fileID: 835314611}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Deal Damage Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,7 +620,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 835314609}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 596900259}
+        m_TargetAssemblyTypeName: UIMain, Assembly-CSharp
+        m_MethodName: DealDamageTest
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 835314608}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &835314609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2223,10 +2253,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: ac9e02ea18781ab459dd5feca42c0db1, type: 3}
-  m_Type: 1
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0

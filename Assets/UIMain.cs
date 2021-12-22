@@ -10,7 +10,7 @@ public class UIMain : MonoBehaviour
     public static UIMain Instance() { return mInstance;  }
 
     public Image m_HpBar;
-    public GameObject m_PlayerObject; // 為了演示方便，此為強制放進來
+    public GameObject m_PlayerObject; // 為了演示方便，直接在UIMain呼叫角色
     //public Player m_PlayerObject; // 這方法是否不可行?
 
     private void Awake()
@@ -18,13 +18,10 @@ public class UIMain : MonoBehaviour
         mInstance = this;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         
@@ -36,10 +33,12 @@ public class UIMain : MonoBehaviour
     }
 
 
-    public void DealDamageTest()
+    public void DealDamageTest(Button b)
     {
-        m_PlayerObject.SendMessage("GetDamage!!", 10.0f);
-        //m_PlayerObject.GetHit(); ???? 這是否根本不可行?
+        Debug.Log(b.name + ":click");
+        //SendMessage("function名稱" , 要傳送的數值)
+        m_PlayerObject.SendMessage("GetHit", 10.0f);
+        //m_PlayerObject.GetHit(); ? ??? 這是否根本不可行?
     }
 }
  
